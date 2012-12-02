@@ -1,0 +1,9 @@
+env = Environment()
+
+env['APP_TARGET'] = 'InstancedSampleApp'
+env['APP_SOURCES'] = ['InstancedSampleApp.cpp']
+env['RESOURCES'] = ['texture.png', '*.glsl']
+
+env = SConscript('../../../scons/SConscript', exports = 'env')
+
+SConscript('../../../../../scons/SConscript', exports = 'env')

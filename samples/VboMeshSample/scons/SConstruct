@@ -1,0 +1,9 @@
+env = Environment()
+
+env['APP_TARGET'] = 'VboMeshSampleApp'
+env['APP_SOURCES'] = ['VboMeshSampleApp.cpp']
+env['RESOURCES'] = ['texture.png']
+
+env = SConscript('../../../scons/SConscript', exports = 'env')
+
+SConscript('../../../../../scons/SConscript', exports = 'env')

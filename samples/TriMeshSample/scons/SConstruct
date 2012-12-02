@@ -1,0 +1,9 @@
+env = Environment()
+
+env['APP_TARGET'] = 'TriMeshSampleApp'
+env['APP_SOURCES'] = ['TriMeshSampleApp.cpp']
+env['RESOURCES'] = ['texture.png']
+
+env = SConscript('../../../scons/SConscript', exports = 'env')
+
+SConscript('../../../../../scons/SConscript', exports = 'env')
